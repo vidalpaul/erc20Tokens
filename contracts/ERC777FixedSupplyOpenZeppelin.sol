@@ -8,16 +8,14 @@ This enables a lot of interesting use cases, including atomic purchases using to
 
 Furthermore, since contracts are required to implement these hooks in order to receive tokens, no tokens can get stuck in a contract that is unaware of the ERC777 protocol, as has happened countless times when using ERC20s. */
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.15;
 
 import "@openzeppelin/contracts/token/ERC777/ERC777.sol";
-import "@openzeppelin/contract/access/Ownable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract GLDTOken is ERC777, Ownable {
-    constructor(uint256 initialSupply, address[] memory defaultOperators) public {
-        ERC("Gold", "GLD", defaultOperators);
-        {
+contract ERC777FixedSupplyOpenZeppelin is ERC777, Ownable {
+    constructor(uint256 initialSupply, address[] memory defaultOperators) 
+        ERC777("Gold", "GLD", defaultOperators) {
             _mint(msg.sender, initialSupply, "", "");
-        }
     }
 }
