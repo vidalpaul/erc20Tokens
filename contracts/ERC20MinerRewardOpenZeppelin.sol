@@ -4,6 +4,6 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract ERC20MinerReward is ERC20 {
+contract ERC20MinerRewardOpenZeppelin is ERC20 {
     constructor() ERC20("MinerReward", "MRW") {}
 }
