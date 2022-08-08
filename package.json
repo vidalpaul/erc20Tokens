@@ -5,6 +5,7 @@
     "hardhat": "^2.10.1"
   },
   "dependencies": {
+    "@chainlink/contracts": "^0.4.2",
     "@openzeppelin/contracts": "^4.7.1",
     "hardhat-erc1820": "^0.1.0",
     "solmate": "^6.5.0"
